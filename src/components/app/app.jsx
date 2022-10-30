@@ -137,6 +137,20 @@ const App = () => {
     }
   };
 
+  const onInputSalaryChange = (inputValue, id) => {
+    inputValue = inputValue.replace(/[^0-9]/g, "");
+    const newData = visibleData.map((item) => {
+      if (item.id === id) {
+        item.salary = inputValue;
+      }
+
+      return item;
+    });
+
+    setData(newData);
+    addDataToLocalStorage(newData);
+  };
+
   return (
     <div className='app'>
       <AppInfo data={data} />
@@ -155,6 +169,7 @@ const App = () => {
         data={visibleData}
         onDelete={deleteItem}
         onToggleProp={onToggleProp}
+        onInputSalaryChange={onInputSalaryChange}
       />
       <EmployeesAddForm addItem={addItem} isEmpty={empty} />
     </div>

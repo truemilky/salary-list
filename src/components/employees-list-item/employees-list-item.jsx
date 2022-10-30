@@ -7,6 +7,7 @@ const EmployeesListItem = ({
   onToggleProp,
   increase,
   raise,
+  onInputSalaryChange,
 }) => {
   let listItemClassName = "list-group-item d-flex justify-content-between";
 
@@ -29,6 +30,7 @@ const EmployeesListItem = ({
       </span>
       <input
         type='text'
+        onChange={onInputSalaryChange}
         className='list-group-item-input'
         defaultValue={salary + "$"}
       />
