@@ -1,0 +1,10 @@
+.btn-group {
+    display: flex;
+    margin-top: 20px;
+}
+
+@media(max-width: 622px) {
+    .btn-group .btn {
+        font-size: 12px !important;
+    }
+}
